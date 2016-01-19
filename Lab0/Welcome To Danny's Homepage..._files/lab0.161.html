@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0076)https://scs.senecac.on.ca/~danny.abesdris/map523.161/labs/lab0/lab0.161.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>MAP523/DPS923 Lab #0 Winter 2016</title>
+    <style type="text/css">
+    .c0  { font-family: courier, monospace; font-size: 12pt; background-color: #c0c0c0 }
+    .c1  { font-family: courier, monospace; font-size: 16pt; background-color: #c0c0c0 }
+    .c2  { font-family: verdana, monospace; font-size: 8pt }
+    .c2w { font-family: verdana, monospace; font-size: 10pt; color: #FFFFFF }
+    .c2bl { font-family: verdana, monospace; font-size: 10pt; color: #000000 }
+    .c2a { font-family: verdana, monospace; font-size: 8pt; background-color: #FFFF00 }
+    .c2b { font-family: verdana, monospace; font-size: 8pt; background-color: #33FFFF }
+    .c2bif { font-family: courier, monospace; font-size: 10pt; background-color: #FF0099 }
+    .c2blue { font-family: courier, monospace; font-size: 10pt; background-color: #0000FF }
+    .c2c { font-family: courier, monospace; font-size: 10pt; background-color: #c0c0c0 }
+    .c2ipc1 { font-family: courier, monospace; font-size: 10pt; background-color: #FF1234 }
+    .c2ipc2 { font-family: courier, monospace; font-size: 10pt; background-color: #F87217 }
+    .c2ipc3 { font-family: courier, monospace; font-size: 10pt; background-color: #4455FF }
+    .c2oopa { font-family: courier, monospace; font-size: 10pt; background-color: #0000FF }
+    .c2oopb { font-family: courier, monospace; font-size: 10pt; background-color: #00FF00 }
+    .c2oopab { font-family: courier, monospace; font-size: 10pt; background-color: #F87217 }
+    .c2g { font-family: courier, monospace; font-size: 10pt; color: #FFFFFF }
+    .c2d2 { font-family: courier, monospace; font-size: 10pt; color: #0000FF; font-style: bold }
+    .c2dp { font-family: verdana, monospace; font-size: 10pt; background-color: #616D7E }
+    .c2apple { font-family: verdana, monospace; font-size: 10pt; background-color: #8E35EF }
+    .c2dsa { font-family: verdana, monospace; font-size: 10pt; background-color: #FF0099 }
+    .c2help { font-family: verdana, monospace; font-size: 10pt; background-color: #00FF80 }
+    .c2d { font-family: arial, monospace; font-size: 12pt; background-color: #4E4848 }
+    .c3  { font-family: courier, monospace; font-size: 10pt }
+    .c3int1 { font-family: courier, monospace; font-size: 10pt; background-color: #FFFF00 }
+    .c3int2 { font-family: courier, monospace; font-size: 10pt; background-color: #8000FF }
+    .c4  { font-family: verdana, monospace; font-size: 10pt; font-style: bold }
+    .c5  { font-family: verdana, monospace; font-size: 12pt }
+    .c6  { font-family: verdana, monospace; font-size: 14pt }
+    .c7  { font-family: verdana, monospace; font-size: 16pt }
+    .c8  { font-family: monospace; font-size: 10pt }
+    .c9  { font-family: monospace; font-size: 12pt }
+    .c9d  { font-family: monospace; font-size: 12pt; background-color: #484848; color: #FFFFFF }
+    .chd  { font-family: monospace; font-size: 14pt; background-color: #484848; color: #FFFFFF }
+    .c10 { font-family: monospace; font-size: 11pt }
+    .c2dl { font-family: verdana, monospace; font-size: 10pt; background-color: #0bcfff }
+    body { background-color: #EAEAEA }
+    </style>
+</head>
+<body marginwidth="0" marginheight="0">
+<table>
+   <tbody><tr><td><h2>MAP523/DPS923 Lab #0 Winter 2016<br>Creating an iOS Hello World App in Xcode 7.2 and Swift</h2></td><td><img src="Xcode_icon.png" height="128" width="128" align="middle" alt="Xcode logo"> <img src="swift.png" height="100" width="90" align="middle" alt="Swift logo"></td>
+   </tr>
+</tbody></table>
+<pre><span class="c9">step 01: Open Xcode and select "Create a new Xcode project".
+
+<a href="xcode1.png"><img src="xcode1.png" height="235" width="401" align="middle" alt="xcode1.png"></a>
+
+Step 02: When asked for a project template, on the left side of the
+	 dialog (operating system and application type), choose iOS &gt; Application,
+	 and then "Single View Application"
+
+<a href="xcode2.png"><img src="xcode2.png" height="335" width="526" align="middle" alt="xcode1.png"></a>
+
+Step 03: For project options, enter "helloWorld" for product name, "Swift" for language.
+	 "iPhone" for devices, and "none" for Organization identifier.
+	 NOTE: If "Include Unit/UI Tests" are checked, uncheck those options and
+	 click on the "next" button.         
+
+<a href="xcode3.png"><img src="xcode3.png" height="340" width="523" align="middle" alt="xcode3.png"></a>
+
+Step 04: Now choose a location where your project will be saved and click on the "Create"
+	 button.
+		  
+	 You should be presented with a screen that looks similar to the one below.
+
+<a href="xcode4.png"><img src="xcode4.png" height="342" width="526" align="middle" alt="xcode4.png"></a>
+
+Step 05: Next, at the top of the screen (to the right of the "Stop application" button,
+	 click on the "Set the active scheme" drop down list and choose "iPhone 5".
+	 
+Step 06: On the Navigation menu on the left, move into the "helloWorld" folder and
+	 click on "Main.storyboard".
+
+<a href="xcode5.png"><img src="xcode5.png" height="335" width="683" align="middle" alt="xcode5.png"></a>
+	 
+Step 07: To the right of the Project Navigator, move into "View Controller Scene" &gt; 
+	 and then click on the "View Controller" icon.
+
+<a href="xcode6.png"><img src="xcode6.png" height="335" width="683" align="middle" alt="xcode6.png"></a>
+	 
+Step 08: On the Utilities panel (right side, but below the main navigation bar), click on the
+	 "Show attributes inspector" or use Option + Command + 4 using the keyboard.
+	 
+<a href="xcode7.png"><img src="xcode7.png" height="335" width="683" align="middle" alt="xcode7.png"></a>
+	 
+Step 09: Still in the Utilities panel on the bottom panel, click on the
+	 "Show the Object library" icon or use Control + Option + Command + 3 using the keyboard.
+	  
+Step 10: In the Simulated Metrics area, change the Size to "iPhone 4-inch" and Orientation
+	 to "Portrait"
+	 
+<a href="xcode8.png"><img src="xcode8.png" height="335" width="683" align="middle" alt="xcode8.png"></a>
+	 
+Step 11: In the object panel scroll down until you see "Label - A variably sized amount
+	 of static text" (or by typing "Label" in the filter field below the object panel)
+	 and click and drag the Label object and drop it into your View.
+	 The Label should be centred near the top and expanded to either edge (within the 
+	 iPhone grid markers) of the view (leaving a small margin on either side).
+	 
+Step 12: In the Label attributes area, replace "Label" with "Name: " and choose centre for
+	 Alignment, and change the font to "System 13.0".
+
+<a href="xcode9.png"><img src="xcode9.png" height="335" width="683" align="middle" alt="xcode9.png"></a>
+	 
+Step 13: Next, do the same thing for a "Text Field" object, placing it below the Label, 
+	 centred and expanded to the edges (using the same margins as the Label) of the view.
+	 In the attributes area, enter "Your name here..." in the Placeholder field.
+
+<a href="xcode10.png"><img src="xcode10.png" height="335" width="683" align="middle" alt="xcode10.png"></a>
+
+Step 14: Now. we will need to reveal the Assistant Editor to begin adding the code that
+	 will allow users to enter text (in the Text Field object) and have it display in
+	 the contents in the Label object.
+	 To reveal the Assistant editor, move to the top left navigation bar and click on the 
+	 icon with 2 circles (Show the Assistant Editor) or by typing Option + Command + Enter
+	 on the keyboard. You can hide the Navigation and Utilities panels (to allow you to
+	 clearly see both the view controller and the assistant editor) by clicking on the
+	 first and third icons in the 2nd group of 3 icons on the top left menu bar or by
+	 typing command + 0 then option + command + 0 on the keyboard).
+
+<a href="xcode11.png"><img src="xcode11.png" height="335" width="683" align="middle" alt="xcode11.png"></a>
+	 
+Step 15: Creating a connection from the Label to the ViewController class:
+	 In the view, control + click anywhere within the Label and drag the mouse to the 
+	 assistant editor window (a blue line will be visible) and drop the line below:
+	 "class ViewController: UIViewController {", but above the function:
+	 
+	 "override func viewDidLoad() {"
+	 This will create a popup "Connection" window. Only change the Name field by
+	 entering "nameLabel" and click on the "Connect" button.
+	 
+<a href="xcode12.png"><img src="xcode12.png" height="147" width="278" align="middle" alt="xcode12.png"></a>
+
+	 The code generated should have been: @IBOutlet var nameLabel: UILabel!
+	 
+	 The @IBOutlet var nameLabel: UILabel! represents the User Interface element (Label)
+	 within the Storyboard, now declared as a real variable (var) within the ViewController Class.
+	 
+Step 16: Do the same for the Text Field object, but this time instead of Outlet, choose Action
+	 and drop the connection below the closing brace } of the:
+	 override func didReceiveMemoryWarning() {
+	 function.
+	 Now edit the following fields:
+	 Connection -&gt; Action
+	 Name -&gt; nameField
+	 Type -&gt; UITextField
+	 Event -&gt; Did End On Exit
+	 
+<a href="xcode13.png"><img src="xcode13.png" height="165" width="278" align="middle" alt="xcode13.png"></a>
+
+	 The code generated should have been:
+	 @IBAction func processTextAction(sender: UITextField) {
+	 }
+
+<a href="xcode14.png"><img src="xcode14.png" height="335" width="683" align="middle" alt="xcode14.png"></a>
+
+Step 17: Now, we must specify the logic the app will execute when the user has completed
+	 editing the UITextField object on the Storyboard.
+	 The processTextAction function is what executes when the user presses the enter
+	 key on the app (after they have completed entering text).
+	 All we want to do here is update the Label object's text with the text the user 
+	 entered in the UITextField object!
+	 So, within the  processTextAction function, add this code:
+	 
+	 nameLabel.text = "Hello \(sender.text) welcome to the iOS world!"   
+
+Step 18: That's it! Now, try running your app by clicking on the
+	 "Build and then run the current scheme" icon on the top left menubar or else
+	 by typing command + R on the keyboard.
+    
+	 <a href="xcode15.png"><img src="xcode15.png" height="437" width="240" align="middle" alt="xcode15.png"></a>
+	 
+	 After the app has completed building, enter some text and press the enter
+	 key using the keyboard (either on screen or using your own keyboard) and
+	 notice what the output looks like.
+	 If you entered "John" in the text field, the output in the Label field displays
+	 as: Hello Optional("John") welcome to the iOS world!
+
+	 <a href="xcode16.png"><img src="xcode16.png" height="437" width="240" align="middle" alt="xcode16a.png"></a>      <a href="xcode17.png"><img src="xcode17.png" height="437" width="240" align="middle" alt="xcode17.png"></a>
+
+	 
+	 Where did the "Optional( )" come from?
+	 
+	 Go back to Step 17: and change the code from:
+	 nameLabel.text = "Hello \(sender.text) welcome to the iOS world!" 
+	 
+	 to:
+	 nameLabel.text = "Hello \(sender.text!) welcome to the iOS world!" 
+	  
+	 The extra ! after "sender.text" tells Swift to explicitly "unwrap"
+	 the Optional variable that was created for the Label field:
+	 @IBOutlet var nameLabel: UILabel! 
+	  
+	 Now build and run your app again and see if the output is now correct?
+	 
+	 <a href="xcode18.png"><img src="xcode18.png" height="437" width="240" align="middle" alt="xcode18.png"></a>
+	 
+	 Congratulations, you just created your first iOS application!
+
+Step 19 (Extra Features):
+	 Following the exact steps as those outlined above, create a new Xcode Single View iOS project
+	 called "helloWorld2".
+	 The Label and TextField objects will be IBOutlets only (changed from version #1).
+	 For this project however, you will be adding 3 objects:
+	 2 IBOutlets: (a Label named "nameLabel", and a TextField named: "inputField").     
+	 The Button object will be connected to the ViewController as the Action called "processButtonPress".
+
+a).      First, download this 85x85 pixel image <img src="audioIcon.png" width="85" height="85"> and save it on your Desktop.
+b).      Next, in the navigation pane (in the helloWorld2 (brown color) folder) click on the blue
+	 Assets.xcassets folder. In the white panel that becomes visible (to the right of the Navigation pane
+	 and below the AppIcon listing, click, drag, and drop the audioIcon.png file.
+	 Your screen should like this:
+
+<a href="xcode19.png"><img src="xcode19.png" height="403" width="570" align="middle" alt="xcode19.png"></a>
+
+c).      Next, add a Button object to your view and resize it to make sure that it has a width and height
+	 of 85 pixels (85x85) and make sure it is centered relative to the objects in the Main.storyboard.
+	 Now, click on the Button object to select it and then select the "Show the Attributes Inspector"
+	 in the Utilities pane. On the "Image" dropdown list, choose "audioIcon".
+	 Your screen should look like this:
+
+<a href="xcode20.png"><img src="xcode20.png" height="393" width="598" align="middle" alt="xcode20.png"></a>
+
+d).     In the navigation pane, click on the blue helloWorld2 folder and in the main (center) window
+	scroll down until you see the "Linked Frameworks and Libraries: section.
+	Click on the "+" symbol and from the iOS 9.2/8.4 dropdown list, select "AVFoundation.framework"
+	and click on "Add".
+
+	<a href="xcode21.png"><img src="xcode21.png" height="200" width="230" align="middle" alt="xcode21.png"></a>
+
+e).     Now, navigate to the ViewController.swift file in the Navigation pane and add "import AVFoundation"
+	(without the quotes) below the import UIKit directive.
+
+f).     Go back to the Main.storyboard and create the 2 IBOutlets by control + click + drag + dropping
+	a connection from the Label and TextField into the ViewController class.
+	Now, below the IBOutlets, add the following lines of code:
+
+	let synth = AVSpeechSynthesizer( )
+	var myUtterance = AVSpeechUtterance(string: "")
+
+	In the IBAction func processButtonPress(sender: UIButton) { function, add the following code:
+  
+	inputField.canBecomeFirstResponder( )
+	let color = UIColor.orangeColor( )
+	nameLabel.textColor = color
+	nameLabel.text = "Hello \(inputField.text!)"
+	myUtterance = AVSpeechUtterance(string: nameLabel.text!)
+	myUtterance.rate = 0.5
+	synth.speakUtterance(myUtterance)
+	inputField.resignFirstResponder( )
+
+	Your screen should look like:
+
+<a href="xcode22.png"><img src="xcode22.png" height="404" width="641" align="middle" alt="xcode22.png"></a>
+
+g).     Build and run your app in the simulator and enter a name in the inputField and press
+	on the Button. What happens? Turn up the volume on your Mac. Do you hear anything?
+</span>
+</pre>
+<p>
+<img src="any.gif" alt="Any Browser!" height="31" width="88">
+</p>
+
+
+</body></html>
