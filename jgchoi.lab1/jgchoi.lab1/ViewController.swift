@@ -41,11 +41,11 @@ class ViewController: UIViewController {
         var convertedValue : Double = Double()
         
         switch segmentCtrl.selectedSegmentIndex {
-            case 0: convertedValue = Double(currentValue) * 9.0 / 5.0 + 32.0
-            case 1: convertedValue = Double(currentValue) / 1.428
-            case 2: convertedValue = Double(currentValue) * 2.2
-            case 3: convertedValue = Double(currentValue) / 1.6
-            default: break
+        case 0: convertedValue = Double(currentValue) * 9.0 / 5.0 + 32.0
+        case 1: convertedValue = Double(currentValue) / 1.428
+        case 2: convertedValue = Double(currentValue) * 2.2
+        case 3: convertedValue = Double(currentValue) / 1.6
+        default: break
         }
         
         label1Value.text = "\(currentValue)"
@@ -59,11 +59,11 @@ class ViewController: UIViewController {
         let dateString = dateFormatter.stringFromDate(date)
         let timeOfDay = dateString[dateString.startIndex.advancedBy(21)...dateString.startIndex.advancedBy(23)]
         var emoticon: String!
-        
+
         if (timeOfDay == "AM"){
-             emoticon = "\u{1F31E}"
+            emoticon = "\u{1F31E}"
         }else{
-             emoticon = "\u{1F31E}"
+            emoticon = "\u{1F31B}"
         }
         
         textViewData.text = sender.text! + " " + dateString + emoticon!
@@ -111,12 +111,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         proceeSegmentClick(segmentCtrl)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
