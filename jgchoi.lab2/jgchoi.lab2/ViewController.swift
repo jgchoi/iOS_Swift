@@ -95,10 +95,16 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         switch money{
         case 0..<0.05:
             bets.setEnabled(false, forSegmentAtIndex: 0)
+            bets.setEnabled(false, forSegmentAtIndex: 1)
+            bets.setEnabled(false, forSegmentAtIndex: 2)
+            bets.setEnabled(false, forSegmentAtIndex: 3)
+
             spinButton.enabled = false
         case 0.05..<0.25:
             bets.setEnabled(true, forSegmentAtIndex: 0)
             bets.setEnabled(false, forSegmentAtIndex: 1)
+            bets.setEnabled(false, forSegmentAtIndex: 2)
+            bets.setEnabled(false, forSegmentAtIndex: 3)
             if(bet>money){
                 bets.selectedSegmentIndex = 0
                 bet = 0.05
@@ -107,6 +113,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
             bets.setEnabled(true, forSegmentAtIndex: 0)
             bets.setEnabled(true, forSegmentAtIndex: 1)
             bets.setEnabled(false, forSegmentAtIndex: 2)
+            bets.setEnabled(false, forSegmentAtIndex: 3)
             if(bet>money){
                 bets.selectedSegmentIndex = 1
                 bet = 0.25
@@ -142,7 +149,8 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
         }
         
         var result : Bool = true
-        //7*7
+        
+        //Check for all 7
         for i in 0..<7{
             if(spinResult[i] != 0){
                 result = false
@@ -153,16 +161,18 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
             money+=1000000
             return true;
         }
-        result = true
         
-        //7*(1~6)
+        //Check for any same 7 itmes
+        result = true
         for i in 1..<7{
             for j in 0..<7{
                 if(spinResult[j] != i){
                     result = false
+                    break
                 }
             }
             if(result){
+                print("Any 7 items")
                 money += bet*1000
                 return true
             }
@@ -235,41 +245,38 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
             return true
         }
         
-        //5*0~6
+        //4*0~6
         for i in 0..<7{
             var counter = 0;
             for j in 0..<7{
                 if(spinResult[j] == i){
                     counter++
-           
-                }else if(counter == 4){
-                    money += bet*5
-                    return true
+                }else if(counter != 4){
+                    counter = 0
                 }
             }
-                       counter = 0;
+            if(counter == 4){
+                money += bet*5
+                return true
+            }
         }
-        
-        //5*0~6
+
+        //3*0~6
         for i in 0..<7{
-            var counter = 0;
+            var counter:Int = 0;
             for j in 0..<7{
-                if(spinResult[j] == i){
+                if(spinResult[j] == i && counter != 3){
                     counter++
-                    if(counter == 3){
-                        money += bet*1
-                        return true
-                    }
+                }else if(counter != 3){
+                    counter = 0
                 }
             }
-            
-            counter = 0;
+            if(counter == 3){
+                money += bet*1
+                return true
+            }
         }
-        
-    
-    
-       
-        
+
         
         return false;
     }
