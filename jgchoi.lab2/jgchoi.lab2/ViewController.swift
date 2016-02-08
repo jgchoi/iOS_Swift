@@ -11,11 +11,12 @@ import AudioToolbox
 
 class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
     var images:[UIImage] = [];
-    var crunchSoundId: SystemSoundID = 0;
-    var winnerSoundId: SystemSoundID = 0;
-    var MAX = Int(Int16.max)*50
+    var crunchSoundId: SystemSoundID = 0
+    var winnerSoundId: SystemSoundID = 0
+//  var MAX = Int(Int16.max)*50 --> Not working in real iPhone
+    var MAX:Int = 500
     var money = 25.00
-    var bet: Double = 0;
+    var bet: Double = 0
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var picker: UIPickerView!
@@ -43,7 +44,11 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     }
     
     func updateMoneyAmount(){
-        moneyAmount.text =  String(format: "$ %.2f", money)
+        if(money < 0.01){
+             moneyAmount.text = "Out of Money"
+        }else{
+            moneyAmount.text =  String(format: "$ %.2f", money)
+        }
     }
 
     @IBAction func changeBetValue(sender: UISegmentedControl) {
@@ -68,16 +73,17 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     @IBAction func processButtonSpin(sender: UIButton) {
         //Deduct bet amount
         money -= bet
-//        
-//        for i in 0..<7{
-//            let newValue = Int(arc4random_uniform(UInt32(MAX)))+1
-//            picker.selectRow(newValue, inComponent: i, animated: true)
-//        }
-//        
+        
+        for i in 0..<7{
+            let newValue = Int(arc4random_uniform(UInt32(MAX-40)))+20
+            picker.selectRow(newValue, inComponent: i, animated: true)
+        }
+        
         if crunchSoundId == 0 {
             let soundURL = NSBundle.mainBundle().URLForResource("crunch", withExtension: "wav")! as CFURLRef
             AudioServicesCreateSystemSoundID(soundURL, &crunchSoundId)
         }
+        
         AudioServicesPlaySystemSound(crunchSoundId)
         
         if (isWin()){
@@ -90,65 +96,57 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     }
     
     func updateBets(){
-        spinButton.enabled = true
-
-        switch money{
+        
+        //Round money value
+        let multiplier = pow(10.0, 2)
+        let rounded = round(money * multiplier) / multiplier
+        
+        switch rounded{
         case 0..<0.05:
-            bets.setEnabled(false, forSegmentAtIndex: 0)
-            bets.setEnabled(false, forSegmentAtIndex: 1)
-            bets.setEnabled(false, forSegmentAtIndex: 2)
-            bets.setEnabled(false, forSegmentAtIndex: 3)
-
+            updateSegmentStatusFor(false, secondIndex: false, thirdIndex: false, fourthIndex: false)
             spinButton.enabled = false
         case 0.05..<0.25:
-            bets.setEnabled(true, forSegmentAtIndex: 0)
-            bets.setEnabled(false, forSegmentAtIndex: 1)
-            bets.setEnabled(false, forSegmentAtIndex: 2)
-            bets.setEnabled(false, forSegmentAtIndex: 3)
+            updateSegmentStatusFor(true, secondIndex: false, thirdIndex: false, fourthIndex: false)
             if(bet>money){
                 bets.selectedSegmentIndex = 0
                 bet = 0.05
             }
         case 0.25..<1.00:
-            bets.setEnabled(true, forSegmentAtIndex: 0)
-            bets.setEnabled(true, forSegmentAtIndex: 1)
-            bets.setEnabled(false, forSegmentAtIndex: 2)
-            bets.setEnabled(false, forSegmentAtIndex: 3)
+            updateSegmentStatusFor(true, secondIndex: true, thirdIndex: false, fourthIndex: false)
             if(bet>money){
                 bets.selectedSegmentIndex = 1
                 bet = 0.25
             }
         case 1.00..<2.00:
-            bets.setEnabled(true, forSegmentAtIndex: 0)
-            bets.setEnabled(true, forSegmentAtIndex: 1)
-            bets.setEnabled(true, forSegmentAtIndex: 2)
-            bets.setEnabled(false, forSegmentAtIndex: 3)
+            updateSegmentStatusFor(true, secondIndex: true, thirdIndex: true, fourthIndex: false)
             if(bet>money){
                 bets.selectedSegmentIndex = 2
                 bet = 1.00
             }
         default:
             break
-            
         }
+        
         if( money > 2.00){
-            bets.setEnabled(true, forSegmentAtIndex: 0)
-            bets.setEnabled(true, forSegmentAtIndex: 1)
-            bets.setEnabled(true, forSegmentAtIndex: 2)
-            bets.setEnabled(true, forSegmentAtIndex: 3)
-
+            updateSegmentStatusFor(true, secondIndex: true, thirdIndex: true, fourthIndex: true)
         }
+    }
+    
+    func updateSegmentStatusFor(FirstIndex: Bool, secondIndex: Bool, thirdIndex: Bool, fourthIndex:Bool){
+        bets.setEnabled(FirstIndex, forSegmentAtIndex: 0)
+        bets.setEnabled(secondIndex, forSegmentAtIndex: 1)
+        bets.setEnabled(thirdIndex, forSegmentAtIndex: 2)
+        bets.setEnabled(fourthIndex, forSegmentAtIndex: 3)
     }
     
     func isWin() ->Bool{
         winLabel.text = String("")
         var spinResult : Array<Int> = [];
+        var result : Bool = true
         
         for i in 0..<7{
             spinResult.append(picker.selectedRowInComponent(i)%images.count)
         }
-        
-        var result : Bool = true
         
         //Check for all 7
         for i in 0..<7{
@@ -162,7 +160,7 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
             return true;
         }
         
-        //Check for any same 7 itmes
+        //Check for any same 7 itmes other than "Seven"
         result = true
         for i in 1..<7{
             for j in 0..<7{
@@ -172,63 +170,38 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
                 }
             }
             if(result){
-                print("Any 7 items")
                 money += bet*1000
                 return true
             }
             result = true;
         }
         
-        //6*0~6
-        for i in 0..<7{
-            var counter = 0;
-            for j in 0..<7{
-                if(spinResult[j] == i){
-                    counter++
-                }else if(counter != 6){
-                    counter = 0
-                }
-            }
-            if(counter == 6){
-                money += bet*250
-                return true
-            }
-            counter = 0;
+        //Check for 6 of any item
+        if(checkForSequence(6, withResult: spinResult, withRate: 250.00)){
+            return true
         }
         
-        //5*0~6
-        for i in 0..<7{
-            var counter = 0;
-            for j in 0..<7{
-                if(spinResult[j] == i){
-                    counter++
-                }else if(counter != 5){
-                    counter = 0
-                }
-            }
-            if(counter == 5){
-                money += bet*50
-                return true
-            }
-            counter = 0;
+        //Check for 5 of any item
+        if(checkForSequence(5, withResult: spinResult, withRate: 50.00)){
+            return true
         }
-        
-        //4 & 3
-        if( (spinResult[0] == spinResult[1] &&
+       
+        //Check for (4&3) || (3&4)
+        if((spinResult[0] == spinResult[1] &&
             spinResult[1] == spinResult[2] &&
             spinResult[2] == spinResult[3] &&
             spinResult[4] == spinResult[5] &&
             spinResult[5] == spinResult[6] ) ||
-            (spinResult[0] == spinResult[1] &&
+           (spinResult[0] == spinResult[1] &&
             spinResult[1] == spinResult[2] &&
             spinResult[3] == spinResult[4] &&
             spinResult[4] == spinResult[5] &&
-                spinResult[5] == spinResult[6] )){
-                    money += bet*25
-                    return true
+            spinResult[5] == spinResult[6] )){
+            money += bet*25
+            return true
         }
         
-        // 3& 3
+        //Check for 1/3/3, 3/1/3, or 3/1/1
         if( (   spinResult[0] == spinResult[1] &&
                 spinResult[1] == spinResult[2] &&
                 spinResult[3] == spinResult[4] &&
@@ -245,40 +218,37 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
             return true
         }
         
-        //4*0~6
+        //Check for 4 of any item
+        if(checkForSequence(4, withResult: spinResult, withRate: 5.00)){
+            return true
+        }
+        
+        //Check for 3 of any item
+        if(checkForSequence(3, withResult: spinResult, withRate: 1.00)){
+            return true
+        }
+        return false;
+    }
+    
+    func checkForSequence(count: Int, withResult result: Array<Int>, withRate rate:Double) -> Bool{
         for i in 0..<7{
             var counter = 0;
             for j in 0..<7{
-                if(spinResult[j] == i){
+                if(result[j] == i){
                     counter++
-                }else if(counter != 4){
+                }else if(counter == count){
+                    break
+                }else{
                     counter = 0
                 }
             }
-            if(counter == 4){
-                money += bet*5
+            if(counter == count){
+                money += bet*rate
                 return true
             }
+            counter = 0;
         }
-
-        //3*0~6
-        for i in 0..<7{
-            var counter:Int = 0;
-            for j in 0..<7{
-                if(spinResult[j] == i && counter != 3){
-                    counter++
-                }else if(counter != 3){
-                    counter = 0
-                }
-            }
-            if(counter == 3){
-                money += bet*1
-                return true
-            }
-        }
-
-        
-        return false;
+        return false
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -294,7 +264,6 @@ class ViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelega
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
     }
     
     func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {

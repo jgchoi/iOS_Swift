@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jgchoi.lab2/ViewController.swift"
-            timestampString = "476128599.282063"
+            timestampString = "476596478.097338"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "313"
-            endingLineNumber = "313"
+            startingLineNumber = "282"
+            endingLineNumber = "282"
             landmarkName = "playWinnerSound()"
             landmarkType = "5">
          </BreakpointContent>
@@ -22,16 +22,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "jgchoi.lab2/ViewController.swift"
-            timestampString = "476128599.282063"
+            timestampString = "476594650.111349"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
-            landmarkName = "isWin()"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "updateBets()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "jgchoi.lab2/ViewController.swift"
+            timestampString = "476596478.097338"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
+            landmarkName = "checkForSequence(_:withResult:withRate:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
