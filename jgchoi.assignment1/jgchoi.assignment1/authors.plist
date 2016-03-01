@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Author</key>
+		<string>Anthony Doerr</string>
+		<key>Books</key>
+		<array>
+			<dict>
+				<key>ISBN</key>
+				<string>0008108196</string>
+				<key>Year</key>
+				<string>2014</string>
+				<key>Title</key>
+				<string>All the Light We Cannot See</string>
+				<key>Cover</key>
+				<string>image1</string>
+			</dict>
+			<dict>
+				<key>ISBN</key>
+				<string>9780812993356</string>
+				<key>Year</key>
+				<string>2011</string>
+				<key>Title</key>
+				<string>About Grace</string>
+				<key>Cover</key>
+				<string>image2</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>Author</key>
+		<string>Robert C. Martin</string>
+		<key>Books</key>
+		<array>
+			<dict>
+				<key>ISBN</key>
+				<string>0132350882</string>
+				<key>Year</key>
+				<string>2008</string>
+				<key>Title</key>
+				<string>Clean Code: A Handbook of Agile Software Craftsmanship</string>
+				<key>Cover</key>
+				<string>image3</string>
+			</dict>
+			<dict>
+				<key>ISBN</key>
+				<string>0132350882</string>
+				<key>Year</key>
+				<string>2011</string>
+				<key>Title</key>
+				<string>The Clean Coder: A Code of Conduct for Professional Programmers</string>
+				<key>Cover</key>
+				<string>image4</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>Author</key>
+		<string>Barbara G. Cox</string>
+		<key>Books</key>
+		<array>
+			<dict>
+				<key>ISBN</key>
+				<string>0130450316</string>
+				<key>Year</key>
+				<string>2004</string>
+				<key>Title</key>
+				<string>Ethics at Work (NetEffect Series) </string>
+				<key>Cover</key>
+				<string>image5</string>
+			</dict>
+			<dict>
+				<key>ISBN</key>
+				<string>076381301X</string>
+				<key>Year</key>
+				<string>1657</string>
+				<key>Title</key>
+				<string>Exceptional Teaching: Ideas in Action</string>
+				<key>Cover</key>
+				<string>image6</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>Author</key>
+		<string>Christian Keur</string>
+		<key>Books</key>
+		<array>
+			<dict>
+				<key>ISBN</key>
+				<string>0134390733</string>
+				<key>Year</key>
+				<string>2015</string>
+				<key>Title</key>
+				<string>iOS Programming: The Big Nerd Ranch Guide (5th Edition)</string>
+				<key>Cover</key>
+				<string>image7</string>
+			</dict>
+			<dict>
+				<key>ISBN</key>
+				<string>0321942051</string>
+				<key>Year</key>
+				<string>2014</string>
+				<key>Title</key>
+				<string>iOS Programming: The Big Nerd Ranch Guide (4th Edition)</string>
+				<key>Cover</key>
+				<string>image8</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>
