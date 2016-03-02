@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B200FB761C86760A006CBC09 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200FB751C86760A006CBC09 /* AddBookViewController.swift */; };
 		B218ED161C864D940095CF2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B218ED151C864D940095CF2F /* AppDelegate.swift */; };
 		B218ED1B1C864D950095CF2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B218ED191C864D950095CF2F /* Main.storyboard */; };
 		B218ED1D1C864D950095CF2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B218ED1C1C864D950095CF2F /* Assets.xcassets */; };
@@ -16,9 +17,11 @@
 		B218ED2E1C8650310095CF2F /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B218ED2B1C8650310095CF2F /* BooksViewController.swift */; };
 		B218ED2F1C8650310095CF2F /* BookImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B218ED2C1C8650310095CF2F /* BookImageController.swift */; };
 		B218ED311C8650370095CF2F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B218ED301C8650370095CF2F /* WebViewController.swift */; };
+		B218ED371C8666200095CF2F /* AddAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B218ED361C8666200095CF2F /* AddAuthorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B200FB751C86760A006CBC09 /* AddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 		B218ED121C864D940095CF2F /* jgchoi.assignment1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jgchoi.assignment1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B218ED151C864D940095CF2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B218ED1A1C864D950095CF2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,6 +33,7 @@
 		B218ED2B1C8650310095CF2F /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		B218ED2C1C8650310095CF2F /* BookImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookImageController.swift; sourceTree = "<group>"; };
 		B218ED301C8650370095CF2F /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		B218ED361C8666200095CF2F /* AddAuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAuthorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 				B218ED2B1C8650310095CF2F /* BooksViewController.swift */,
 				B218ED2C1C8650310095CF2F /* BookImageController.swift */,
 				B218ED301C8650370095CF2F /* WebViewController.swift */,
+				B218ED361C8666200095CF2F /* AddAuthorViewController.swift */,
+				B200FB751C86760A006CBC09 /* AddBookViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -173,7 +179,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B218ED311C8650370095CF2F /* WebViewController.swift in Sources */,
+				B218ED371C8666200095CF2F /* AddAuthorViewController.swift in Sources */,
 				B218ED161C864D940095CF2F /* AppDelegate.swift in Sources */,
+				B200FB761C86760A006CBC09 /* AddBookViewController.swift in Sources */,
 				B218ED2D1C8650310095CF2F /* AuthorsViewController.swift in Sources */,
 				B218ED2F1C8650310095CF2F /* BookImageController.swift in Sources */,
 				B218ED2E1C8650310095CF2F /* BooksViewController.swift in Sources */,
@@ -324,6 +332,7 @@
 				B218ED261C864D950095CF2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

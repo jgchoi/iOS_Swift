@@ -22,6 +22,9 @@ class BookImageController: UIViewController {
         // Do any additional setup after loading the view.
         if let fileName = bookDetails["Cover"] {
             bookCover.image = UIImage(named: fileName)
+            if(bookCover.image == nil){
+                bookCover.image = UIImage(named: "defaultImage")
+            }
             bookCover.contentMode = .ScaleAspectFit
         }
         
@@ -47,15 +50,11 @@ class BookImageController: UIViewController {
         performSegueWithIdentifier(segueToWeb, sender: self)
     }
 
-
-
     // MARK: - Navigation
-
-//     In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == segueToWeb {
-                let destinationViewController = segue.destinationViewController as! ViewController
-                destinationViewController.bookTitle = bookDetails["Title"]
+                let destinationViewController = segue.destinationViewController as! WebViewController
+                destinationViewController.bookISBN = bookDetails["ISBN"]
         }
     }
 

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIWebViewDelegate {
+class WebViewController: UIViewController, UIWebViewDelegate {
     //---- Outlets
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var fastForwardButton: UIBarButtonItem!
     @IBOutlet weak var rewindButton: UIBarButtonItem!
     @IBOutlet weak var webView: UIWebView!
-    var bookTitle:String?
+    var bookISBN:String?
     
     //---- Outlet Actions
     @IBAction func didTouchFastForward(sender: UIBarButtonItem) {
@@ -53,7 +53,7 @@ class ViewController: UIViewController, UIWebViewDelegate {
         webView.delegate = self
         
         // load web site into web view
-        var stringURL = "http://www.amazon.ca/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=" + bookTitle!
+        var stringURL = "http://www.amazon.ca/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=" + bookISBN!
         stringURL = stringURL.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         let myURL = NSURL(string: stringURL)
         let myURLRequest:NSURLRequest = NSURLRequest(URL: myURL!)
