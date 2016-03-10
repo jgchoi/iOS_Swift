@@ -9,8 +9,6 @@
 import UIKit
 
 class AddBookViewController: UIViewController {
-    var authors = NSMutableArray()
-    var path:String?
     var author: [String: AnyObject]!
     
     @IBOutlet weak var coverImageName: UITextField!
@@ -19,10 +17,10 @@ class AddBookViewController: UIViewController {
     @IBOutlet weak var ISBN: UITextField!
 
     @IBAction func save(sender: AnyObject) {
+        //When save button touched, check fields
+        //Parameter doesn't matter
         editingDone(coverImageName)
     }
-
-    
     
     @IBAction func editingDone(sender: UITextField) {
         if(coverImageName.text?.isEmpty == true){
@@ -34,49 +32,27 @@ class AddBookViewController: UIViewController {
         }else if(ISBN.text?.isEmpty == true){
             showAlert("Enter ISBN")
         }else{
-            addNew()
+            addNewBook()
             navigationController?.popViewControllerAnimated(true)
         }
 
     }
     
-    private func addNew(){
-        authors = loadPlist()
+    private func addNewBook(){
+        let authors = PListHelper.loadMutablePlist()
         let authorIndex = authors.indexOfObject(author)
         let newBook = ["ISBN": ISBN.text!, "Year": publicshedYear.text!, "Title": bookTitle.text!, "Cover": coverImageName.text!];
-        let books = author["Books"] as! [AnyObject]
-        let newBooks = NSMutableArray()
-        for book in books{
-            newBooks.addObject(book)
-        }
-        newBooks.addObject(newBook)
-        author["Books"] = newBooks
+        let books = NSMutableArray(array:author["Books"] as! [AnyObject])
+        books.addObject(newBook)
+        author["Books"] = books
         authors[authorIndex] = author
-        
-        
-        authors.writeToFile(path!, atomically: true)
+        PListHelper.writeToFile(authors)
     }
     
-   
-    
-    //Load OR Write plist
-    private func loadPlist( ) -> NSMutableArray {
-        
-        print(NSHomeDirectory( )) // not required, but used to display the path of your
-        // app's Home Directory
-        
-        // attempt to open "authors.plist" from the application's Documents/ directory
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-            as NSArray
-        let documentsDirectory = paths.objectAtIndex(0) as! NSString
-        path = documentsDirectory.stringByAppendingPathComponent("authors.plist")
-        
-        return NSMutableArray(contentsOfFile: path!)!
-    }
     
     private func showAlert(message:String){
 
-        let alertController = UIAlertController(title: "Empty Field", message:message, preferredStyle: UIAlertControllerStyle.Alert)
+        let alertController = UIAlertController(title: "Empty Field Found", message:message, preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alertController, animated: true, completion: nil)
         
@@ -85,23 +61,10 @@ class AddBookViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         coverImageName.becomeFirstResponder()
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

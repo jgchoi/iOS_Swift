@@ -18,6 +18,7 @@
 		B218ED2F1C8650310095CF2F /* BookImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B218ED2C1C8650310095CF2F /* BookImageController.swift */; };
 		B218ED311C8650370095CF2F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B218ED301C8650370095CF2F /* WebViewController.swift */; };
 		B218ED371C8666200095CF2F /* AddAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B218ED361C8666200095CF2F /* AddAuthorViewController.swift */; };
+		B244907E1C91D8FE008C910F /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B244907D1C91D8FE008C910F /* PlistHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B218ED2C1C8650310095CF2F /* BookImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookImageController.swift; sourceTree = "<group>"; };
 		B218ED301C8650370095CF2F /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		B218ED361C8666200095CF2F /* AddAuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAuthorViewController.swift; sourceTree = "<group>"; };
+		B244907D1C91D8FE008C910F /* PlistHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +68,9 @@
 		B218ED141C864D940095CF2F /* jgchoi.assignment1 */ = {
 			isa = PBXGroup;
 			children = (
+				B218ED191C864D950095CF2F /* Main.storyboard */,
 				B218ED331C8650510095CF2F /* Resource */,
 				B218ED321C8650440095CF2F /* View */,
-				B218ED191C864D950095CF2F /* Main.storyboard */,
 				B218ED271C864EF30095CF2F /* Support */,
 			);
 			path = jgchoi.assignment1;
@@ -102,6 +104,7 @@
 			children = (
 				B218ED281C864FA40095CF2F /* authors.plist */,
 				B218ED1C1C864D950095CF2F /* Assets.xcassets */,
+				B244907D1C91D8FE008C910F /* PlistHelper.swift */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B244907E1C91D8FE008C910F /* PlistHelper.swift in Sources */,
 				B218ED311C8650370095CF2F /* WebViewController.swift in Sources */,
 				B218ED371C8666200095CF2F /* AddAuthorViewController.swift in Sources */,
 				B218ED161C864D940095CF2F /* AppDelegate.swift in Sources */,

@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "jgchoi.assignment1/AuthorsViewController.swift"
-            timestampString = "478583156.10866"
+            filePath = "jgchoi.assignment1/PlistHelper.swift"
+            timestampString = "479321275.910744"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
-            landmarkName = "getAuthorByName(_:)"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "loadPlist()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -150,6 +150,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="bGd-q8-2qh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="vYy-VG-LCo">
+                            <connections>
+                                <action selector="save:" destination="dex-6P-McU" id="MLv-cU-WhK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -252,7 +259,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2049" y="914"/>
+            <point key="canvasLocation" x="2057" y="914"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DdE-VV-kio">
