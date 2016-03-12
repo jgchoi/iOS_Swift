@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BTG-93-4Wh">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Web Links-->
+        <scene sceneID="emh-KA-mws">
+            <objects>
+                <tableViewController id="Tms-vS-Vt2" customClass="MyTableViewController" customModule="jgchoi_PARTB" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aGB-gv-zhc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Tms-vS-Vt2" id="nlg-HW-82k"/>
+                            <outlet property="delegate" destination="Tms-vS-Vt2" id="hGj-FP-TsL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Web Links" id="Saq-FV-3GJ"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="GYp-5y-oFy" kind="show" identifier="toWebView" id="8sO-Te-X2n"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hVc-lA-Kup" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1064" y="209"/>
+        </scene>
+        <!--Web Views-->
+        <scene sceneID="bsK-1r-JeF">
+            <objects>
+                <viewController id="GYp-5y-oFy" customClass="WebViewController" customModule="jgchoi_PARTB" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t1B-AG-GjV"/>
+                        <viewControllerLayoutGuide type="bottom" id="UGv-QJ-LYs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R3g-Lq-4FY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oYt-0V-g00">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hFe-cV-CG2">
+                                <rect key="frame" x="150" y="306" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Web Views" id="Foa-dX-9ij">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Wez-zL-tZr"/>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="hFe-cV-CG2" id="Jru-bQ-zaB"/>
+                        <outlet property="webView" destination="oYt-0V-g00" id="JP0-ud-Tww"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TGg-Rs-hWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1556" y="209"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mtf-ss-Uxk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BTG-93-4Wh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eOz-pb-vJ6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Tms-vS-Vt2" kind="relationship" relationship="rootViewController" id="i5d-T5-uE5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tAw-de-FpI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="252" y="209"/>
+        </scene>
+    </scenes>
+</document>
