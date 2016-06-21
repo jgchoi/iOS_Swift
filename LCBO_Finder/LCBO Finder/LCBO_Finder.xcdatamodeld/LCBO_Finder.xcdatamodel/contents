@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Automatic">
+    <entity name="Store" representedClassName=".Store" syncable="YES">
+        <attribute name="address_line_1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address_line_2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="distance_in_meters" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="friday_close" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="friday_open" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="has_beer_cold_room" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="has_bilingual_services" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="has_parking" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="has_product_consultant" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="has_special_occasion_permits" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="has_tasting_bar" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="has_transit_access" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="has_vintages_corner" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="has_wheelchair_accessability" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="is_dead" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="monday_close" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="monday_open" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postal_code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="saturday_close" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="saturday_open" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="store_no" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="sunday_close" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="sunday_open" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="telephone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thursday_close" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="thursday_open" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="tuesday_close" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="tuesday_open" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Store" positionX="-63" positionY="-18" width="128" height="555"/>
+    </elements>
+</model>

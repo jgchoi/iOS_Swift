@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HTb-vb-uG5">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="MBb-W0-lNt">
+            <objects>
+                <viewController id="Fnd-Zr-W2W" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aNW-Qr-9j4"/>
+                        <viewControllerLayoutGuide type="bottom" id="CdX-G4-K8v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Eon-c7-EFR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to use!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0X5-Pe-FOH">
+                                <rect key="frame" x="20" y="72" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cPs-Gn-Hmr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztE-9S-5El">
+                                <rect key="frame" x="20" y="101" width="560" height="479"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">1. Tab any marker on the map: Marker means LCBO Store
+2. Either tab on info window poped up or button on top right corner for more options.
+
+Option 1) View Detail will display detailed store information
+Option 2) Call Store will redirect to dialer app with pre-loaded store number
+Option 3) Navigate to Store will redirect to Maps app with pre-loaded store address
+
+Happy Drinking!!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0X5-Pe-FOH" firstAttribute="top" secondItem="aNW-Qr-9j4" secondAttribute="bottom" constant="8" symbolic="YES" id="7nG-8b-Pxw"/>
+                            <constraint firstAttribute="bottom" secondItem="ztE-9S-5El" secondAttribute="bottom" constant="20" symbolic="YES" id="FDs-dg-R4g"/>
+                            <constraint firstItem="0X5-Pe-FOH" firstAttribute="trailing" secondItem="Eon-c7-EFR" secondAttribute="trailingMargin" id="WzG-yH-rR5"/>
+                            <constraint firstItem="0X5-Pe-FOH" firstAttribute="leading" secondItem="Eon-c7-EFR" secondAttribute="leadingMargin" id="Zav-85-azF"/>
+                            <constraint firstItem="ztE-9S-5El" firstAttribute="trailing" secondItem="0X5-Pe-FOH" secondAttribute="trailing" id="c69-b4-vvo"/>
+                            <constraint firstItem="ztE-9S-5El" firstAttribute="top" secondItem="0X5-Pe-FOH" secondAttribute="bottom" constant="8" symbolic="YES" id="eZv-xY-Whm"/>
+                            <constraint firstItem="ztE-9S-5El" firstAttribute="leading" secondItem="0X5-Pe-FOH" secondAttribute="leading" id="fj1-Dj-xFk"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iMo-c0-9lQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1416" y="-643"/>
+        </scene>
+        <!--LCBO Locations-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LCBO_Locator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="LCBO Locations" id="wst-l0-O9Z">
+                        <barButtonItem key="leftBarButtonItem" title="HELP" style="plain" id="l2X-ON-Jo4">
+                            <connections>
+                                <segue destination="Fnd-Zr-W2W" kind="show" identifier="helpView" id="7rA-uA-UlQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="DmZ-Qf-0NZ" kind="show" identifier="viewDetail" id="1G0-2u-i5F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1285" y="152"/>
+        </scene>
+        <!--Detail Table View Controller-->
+        <scene sceneID="fmQ-0f-193">
+            <objects>
+                <tableViewController id="DmZ-Qf-0NZ" customClass="DetailTableViewController" customModule="LCBO_Locator" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="C60-eI-xib">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" textLabel="B5X-DX-PRl" detailTextLabel="9wF-QC-UA8" style="IBUITableViewCellStyleValue1" id="d7O-OA-uH0">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d7O-OA-uH0" id="oBU-Kz-c41">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="B5X-DX-PRl">
+                                            <rect key="frame" x="15" y="12" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9wF-QC-UA8">
+                                            <rect key="frame" x="543" y="12" width="42" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DmZ-Qf-0NZ" id="A1v-m9-gRu"/>
+                            <outlet property="delegate" destination="DmZ-Qf-0NZ" id="ixL-rg-wst"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="npn-uS-9MN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2110" y="152"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kVc-RQ-8rT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HTb-vb-uG5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rIp-Eg-Ou6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dqi-uM-PY9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gn3-Ve-yS8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="473" y="152"/>
+        </scene>
+    </scenes>
+</document>
